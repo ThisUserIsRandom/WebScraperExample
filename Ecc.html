@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="chainsawman.jpg">
+    <title>My weBsite</title>
+    <link rel="stylesheet" href="css/pico.min.css">
+</head>
+<body>
+    <nav>
+        <details style="color:white;margin: auto;" class="grid">
+            <summary>EndPoints</summary>
+            <li><a href="/" style="text-decoration: none;color: white;">Home</a></li>
+            <li>https://nhentai.to/random/</li>
+        </details>
+    </nav>
+    <hr>
+    <article  class="card" style="width:70%;margin: auto;border-radius: 20px;height: 70%;">
+        <header><h5 align="center">{{heading}} </h5></header>
+        <h1 align="center"><img style="height:90%;width:100%;max-width: 300px;max-height:400px;" loading="lazy" src={{image}} alt=""></h1>
+        <footer>
+            <a href="/ecchi/g/{{url}}" style="margin: auto;">link to it</a>
+        </footer><br>
+        <button onClick="window.location.reload();">New hentai</button>
+    </article>
+    <h3 align="center"><u>[Radnom hentai Gen]</u></h3>
+</body>
+</html>

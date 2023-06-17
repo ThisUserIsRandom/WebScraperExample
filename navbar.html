@@ -1,0 +1,18 @@
+ <!-- <nav> -->
+    <details style="margin: auto;">
+        <summary role="button" style="width:100%;background-color:black;border: none;line-height:10%;"><h3 align="center">Menu ></h3></summary>
+            <div style="display: grid;">
+            <li style="margin: auto;"><a href="/" style="text-decoration:none;color:white">Home</a></li>
+            <li style="margin:auto;"><a href="/random">random</a></li><br>
+        <li style="margin:auto;" value="Search">
+            <div class="grid">
+                <form action="/search" method="POST">
+                    <input type="text" name="search" style="line-height: 20px;" placeholder="Search">
+                    <button type="submit" style="width:40%;margin: auto;" value="submit">search</button>
+                </form>
+        </li></div>
+        </div>
+    </details>
+    <!-- </nav> -->
+    {% block body %}
+    {% endblock %}

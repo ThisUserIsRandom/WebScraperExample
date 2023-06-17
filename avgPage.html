@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flask wills</title>
+    <link rel="shortcut icon" href="chainsawman.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../../../css/pico.min.css">
+    <script src="../../../css/readP_next_prev.js"></script>
+    <style>
+        li {
+            list-style: none;
+        }
+
+        details summary::after {
+            display: none;
+        }
+
+        imgC {
+            height: 100%;
+            width: 100%;
+            max-width: 1000px;
+            max-height: 1000px;
+            min-height: 300px;
+            min-width: 300px;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            img {
+                margin: auto;
+                width: 30%;
+            }
+        }
+        @media only screen and (max-width: 900px) {
+            #uniqueDiv{
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        sessionStorage.setItem("images",0)
+    </script>
+
+    <!-- <nav> -->
+        {% extends "navbar.html" %}
+        {% block body %}
+    <!-- </nav> -->
+
+    <h2 align="center">{{name}}</h2>
+    <div class="card" style="width: 100%;margin: auto;border-radius: 20px;background-color:#11191f;">
+        <div class="grid">
+            <img class="imgC" loading="lazy" src="{{coverPhoto}}" alt="">
+            <p style="width:40%;margin:auto;">tags:
+            {% for i in range(Lentags) %}
+               <a href="https://{{tagsNh[i]}}">{{tags[i]}}</a>
+            {% endfor %}
+            </p>
+        </div>
+    </div>
+    <br>
+    <div style="display:grid;grid-template-columns:25% 0% 25% 0% 25%;column-gap:1px;row-gap:10px;margin:10px 10px 10px 10%;width:110%;" id="uniqueDiv">
+    </div>
+    <!--<a href="https://nhentai.to/g/{{sauce}}">-->
+        <button role="botton" style="width: 30%;margin:auto;" onClick="enterText({{sauce}})">
+            <p id="buttonReadNow">Read Now</p>
+        </button><!--</a>-->
+        <h6  align="center"><button role="button" class="outline" onclick="window.scrollTo(0,0)" style="width:20%;">
+            go to Top
+        </button></h6>
+        <h6  align="center"><button role="button" class="outline" onclick="document.getElementById('uniqueDiv').innerHTML='';sessionStorage.setItem('images',0);" style="width:20%;">
+            Clear
+        </button></h6>
+        {% endblock %}
+</body>
+
+</html>

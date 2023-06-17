@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website</title>
+    <link rel="icon" type="image/x-icon" href="chainsawman.jpg">
+    <link rel="stylesheet" href="css\pico.min.css">
+    <title>Hello, world!</title>
+    <style>
+        .grid1{
+            margin-top: 20px;
+            border: 2px solid green;
+            border-radius: 10px;
+            width: 90%;
+            margin-left: 5%;
+            vertical-align: middle;
+            background-color: black;
+            justify-content: center;}
+        .grid1:hover{
+            background-color: green;
+            color: black;}
+            a{text-decoration: none;color: white;}
+        li{
+            list-style: none;
+        }
+        details summary::after {
+            display: none;
+        }
+        .gridS{
+            width: 80%;
+            height: 80%;
+            min-width: 270px;
+        }
+        .imagS{
+            width: 100%;
+            height: 90%;
+            max-height: 300px;
+            min-height: 300px;
+        }
+        @media only screen and (max-width: 1000px) {
+            .gridS{
+                margin: auto;
+                width: 40%;
+            }
+}
+    </style>
+</head>
+<body>
+    <!-- <nav> -->
+    <!-- </nav> -->
+    {% extends "navbar.html" %}
+    {% block body %}
+    <h1 align="center">Popular hentai 🔥</h1>
+    {% for i in range(-10,9,3) %}
+    <div class="grid" style="width: 80%;margin: auto;">
+            <article class="gridS" class="card">
+                <h6>{{ names[i+1] }}</h6>
+                <img class = "imagS" loading="lazy"  src="{{links[i+1]}}" alt="">
+                <footer style="background-color: purple;">
+                    <a href="/ecchi{{ sauces[i+1] }}">Read Crow</a>
+                </footer><br>
+            </article>
+            <article class="gridS" class="card">
+                <h6>{{ names[i+2] }}</h6>
+                <img class = "imagS"  loading="lazy" src="{{links[i+2]}}" alt="">
+                <footer style="background-color: purple;">
+                    <a href="/ecchi{{ sauces[i+2] }}">Read Crow</a>
+                </footer><br>
+            </article>
+            <article class="gridS" class="card">
+                <h6>{{ names[i+3] }}</h6>
+                <img class = "imagS"  loading="lazy" src="{{links[i+3]}}" alt="">
+                <footer style="background-color: purple;">
+                    <a href="/ecchi{{ sauces[i+3] }}">Read Crow</a>
+                </footer><br>
+            </article>
+    </div>
+    {% endfor %}
+    <br><br><br>
+    <script>
+        function next_page(){
+            window.location.href = '/{{ page+1 }}';
+        }
+        function prev_page(){
+            window.location.href = '/{{ page-1 }}';
+        }
+    </script>
+    <div class="grid"><button role="button" class={{prev_button}} onclick="prev_page()" >Previous Page</button><h6 align="center">current page : {{ page }}</h6><button onclick="next_page()" class="outline" role="button">Next page</button></div>
+
+    {% endblock %}
+</body>
+</html>
