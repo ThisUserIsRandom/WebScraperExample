@@ -2,7 +2,6 @@ from echScrap import FindContent
 from test import FetchEverything
 from flask import Flask , render_template , redirect ,sessions
 from flask import request as reqq
-from flask_cors import CORS
 from bs4 import BeautifulSoup
 import urllib.request
 
